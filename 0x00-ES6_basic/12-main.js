@@ -10,8 +10,3 @@ const report = createReportObject(employees);
 console.log(report.allEmployees);
 console.log(report.getNumberOfDepartments(report.allEmployees));
 
-bob@dylan:~$
-bob@dylan:~$ npm run dev 12-main.js 
-{ engineering: [ 'Bob', 'Jane' ], marketing: [ 'Sylvie' ] }
-2
-
