@@ -1,15 +1,15 @@
-import { queryAPI } from './100-weak.js';
+import { queryAPI, weakMap } from "./100-weak.js";
 
-const endpoint = { url: 'https://api.example.com' };
+const endpoint = { protocol: 'http', name: 'getUsers' };
+weakMap.get(endpoint);
 
-try {
-	  queryAPI(endpoint);
-	  queryAPI(endpoint);
-	  queryAPI(endpoint);
-	  queryAPI(endpoint);
-	  queryAPI(endpoint);
-	  queryAPI(endpoint); // This call should throw an error
-} catch (err) {
-	  console.log(err.message); // Should output 'Endpoint load is high'
-}
+queryAPI(endpoint);
+console.log(weakMap.get(endpoint));
 
+queryAPI(endpoint);
+console.log(weakMap.get(endpoint));
+
+queryAPI(endpoint);
+queryAPI(endpoint);
+queryAPI(endpoint);
+queryAPI(endpoint);
